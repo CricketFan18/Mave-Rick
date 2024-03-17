@@ -1,0 +1,106 @@
+
+html{
+    background-color:#222831 !important;
+    font-size: 10px;
+}
+body{
+    background-color: #222831!important;
+}
+
+h1.text{
+    font-weight: bold;
+    font-size: 5em;
+}
+
+p.intro{
+    font-size: 3.5em;
+}
+
+.head-box{
+    margin: 20px;
+    padding: 10px;
+}
+
+.text{
+    color: #EEEEEE;
+    font-family: "Buenard", serif;
+    font-size: 3em;
+    margin: 5px;
+    text-align: center;
+}
+
+input#ac{
+    position: relative;
+    top: 10px;
+}
+
+input#led{
+    border: none!important;
+    background-color: #647D87;
+}
+
+input{
+    width: 10em;
+    height: 3em;
+    background-color: #F9EFDB;
+    border: 5px solid #F9EFDB;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .box{
+    background-color: #647D87;
+    border: 2px solid #647D87;
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
+    padding: 25px;
+    margin: 25px;
+  }
+
+  .add{
+    padding-top: 20px;
+    height: 20px;
+  }
+
+  .btn{
+    width: 50px;
+    height: 30px;
+    background-color: #79AC78!important;
+    color: #EEEEEE;
+  }
+
+  #toggleButton {
+    padding: 5px 20px 20px 20px;
+    height: 25px;
+    background-color: #D04848;
+    cursor: pointer;
+    border: 0;
+    border-radius: 20px;
+}
+
+#toggleButton.active {
+    background-color: #789461;
+}
+
+.icon.fan{
+    position: relative;
+    bottom: 10px;
+}
+
+.icon.bulb{
+    position: relative;
+    bottom: 10px;
+}
+
+.icon.led{
+    position: relative;
+    bottom: 10px;
+}
+
