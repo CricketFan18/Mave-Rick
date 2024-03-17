@@ -21,12 +21,35 @@ p.intro{
     padding: 10px;
 }
 
+.ac-box{
+    padding: 0px!important;
+}
+
+.acbtn{
+    position: relative;
+    top: 20px;
+}
+
+.radio{
+    height: 15px;
+    width: 40px;
+}
 .text{
     color: #EEEEEE;
     font-family: "Buenard", serif;
     font-size: 3em;
     margin: 5px;
     text-align: center;
+}
+
+input#fan{
+    position: relative;
+    bottom: 10px;
+    width: 140px;
+}
+
+input#ac{
+    width: 15em;
 }
 
 input#ac{
@@ -37,6 +60,7 @@ input#ac{
 input#led{
     border: none!important;
     background-color: #647D87;
+    height: 40px!important;
 }
 
 input{
@@ -104,3 +128,8 @@ input{
     bottom: 10px;
 }
 
+input::placeholder{
+    color: #222831!important;
+    font-size: 12px!important;
+    font-weight: bold!important;
+}

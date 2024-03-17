@@ -8,34 +8,6 @@ const port = 3000;
 const API_URL = "https://kodessphere-api.vercel.app";
 
 const yourBearerToken = "HxMvgPp";
-const datas = {
-      fan: 3,
-      bulb: 1,
-      led: "#ff0000",
-      ac: {
-        temp: 25,
-        state: 0
-      }
-}
-let message="";
-
-function time(){
-  const time = new Date();
-  const hour = time.getHours();
-  if(hour>6 && hour<12)
-  {
-    message="Good Morning !";
-  }
-  else if(hour>12 && hour<18)
-  {
-    message="Good Afternoon !";
-  }
-  else
-  {
-    message="Night Time !"
-  }
-}
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -44,18 +16,15 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
 
-app.get("/",  (req, res) => {
-  //const input = axios.get(API_URL + "/devices/" + yourBearerToken);
-  //const data = input.data;
-  console.log(datas);
-  res.render("index.ejs", {datas,message});
+app.get("/",  async(req, res) => {
+  const input = await axios.get(API_URL + "/devices/" + yourBearerToken);
+  const data = input.data;
+  console.log(data);
+  res.render("index.ejs", data);
 });
 
-app.get("/fan", (req,res) => {
-  res.send("FAN")
-})
 
-app.post("/devices",  (req, res) => {
+app.post("/devices",  async(req, res) => {
   console.log(req.body);
   const device = req.body.device;
   if(device === "fan")
@@ -85,7 +54,7 @@ app.post("/devices",  (req, res) => {
       device: device,
       value: {
         "temp": temp,
-        "state": 0
+        "state": state
       }
       }
   }
@@ -102,7 +71,7 @@ app.post("/devices",  (req, res) => {
   console.log(data);
 
   try {
-    const result = axios.post(API_URL + "/devices", data);
+    const result = await axios.post(API_URL + "/devices", data);
     console.log(result.data);
     res.redirect("/");
   } catch (error) {
